@@ -9,7 +9,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 file(GLOB processor_SRC "*.cpp")
 add_executable(Processor ${processor_SRC})
-target_compile_options(Processor PRIVATE "-g" "-Og" "-Wall" "-Wpedantic" "-Werror" "-Wextra")
+target_compile_options(Processor PRIVATE "-O3" "-Wall" "-Wpedantic" "-Werror" "-Wextra")
 
 set_target_properties(Processor PROPERTIES CXX_STANDARD 17)
 

@@ -76,10 +76,8 @@ public:
     {
     }
 
-    void Consume([[maybe_unused]] KeyT id, const ValueT& value) override
+    void Consume(KeyT, const ValueT& value) override
     {
-        // std::cout << "Consumed: {key:" << id << ", value:" << value << "};" <<
-        // std::endl;
         if (m_store_values) {
             m_consumed.push_back(value);
         }
@@ -314,19 +312,18 @@ struct TestValueType {
     {
         g_copy_ctor_invoked = true;
         m_value = v.m_value;
-        std::cout << "Copy ctor!" << std::endl;
     }
 
     TestValueType& operator=(const TestValueType& v)
     {
         g_copy_ctor_invoked = true;
         m_value = v.m_value;
-        std::cout << "Copy assign!" << std::endl;
         return *this;
     }
 
     TestValueType(TestValueType&& v) = default;
     TestValueType& operator=(TestValueType&& v) = default;
+    ~TestValueType() = default;
 
     int m_value = 0;
 };

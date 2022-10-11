@@ -26,7 +26,6 @@ class Processor {
 public:
     Processor(size_t max_queue_capacity = 10000)
         : m_max_queue_capacity(max_queue_capacity)
-        , m_running { true }
         , m_thread([this] { process(); })
     {
     }
@@ -136,6 +135,6 @@ private:
 
     SignalDispatcher m_signal_dispatcher;
     const size_t m_max_queue_capacity = 10000;
-    std::atomic_bool m_running;
+    std::atomic_bool m_running = true;
     std::thread m_thread;
 };
