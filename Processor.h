@@ -6,12 +6,10 @@
 
 #include <atomic>
 #include <functional>
-#include <iostream>
-#include <map>
 #include <memory>
-#include <mutex>
 #include <shared_mutex>
 #include <thread>
+#include <unordered_map>
 
 template <typename KeyT, typename ValueT>
 class Processor {

@@ -3,8 +3,10 @@
 #include <chrono>
 #include <iostream>
 #include <memory>
+#include <string>
 #include <string_view>
 #include <thread>
+#include <vector>
 
 bool g_some_test_failed = false;
 class TestChecker {

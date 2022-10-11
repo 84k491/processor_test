@@ -64,6 +64,6 @@ private:
     std::atomic<size_t> m_size = {};
     std::unique_ptr<Node> m_head;
     Node* m_tail;
-    mutable std::mutex head_mutex;
-    mutable std::mutex tail_mutex;
+    std::mutex head_mutex;
+    std::mutex tail_mutex;
 };
